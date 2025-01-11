@@ -1,0 +1,46 @@
+[
+    {
+        "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+        "embd_dtype": "float32",
+        "embd_dim": 384,
+        "num_params": 22700000,
+        "max_tokens": 256,
+        "similarity": "cosine",
+        "query_instruct": null,
+        "corpus_instruct": null,
+        "reference": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
+    },
+    {
+        "model_name": "jinaai/jina-embeddings-v2-small-en",
+        "embd_dtype": "float32",
+        "embd_dim": 512,
+        "num_params": 32700000,
+        "max_tokens": 8192,
+        "similarity": "cosine",
+        "query_instruct": null,
+        "corpus_instruct": null,
+        "reference": "https://huggingface.co/jinaai/jina-embeddings-v2-small-en"
+    },
+    {
+        "model_name": "text-embedding-3-small",
+        "embd_dtype": "float32",
+        "embd_dim": 1536,
+        "num_params": null,
+        "max_tokens": 8191,
+        "similarity": "cosine",
+        "query_instruct": null,
+        "corpus_instruct": null,
+        "reference": "https://docs.voyageai.com/docs/embeddings"
+    },
+    {
+        "model_name": "voyage-3-lite",
+        "embd_dtype": "float32",
+        "embd_dim": 512,
+        "num_params": null,
+        "max_tokens": 32000,
+        "similarity": "cosine",
+        "query_instruct": "Represent the query for retrieving supporting documents: ",
+        "corpus_instruct": "Represent the document for retrieval: ",
+        "reference": "https://docs.voyageai.com/docs/embeddings"
+    }
+]
