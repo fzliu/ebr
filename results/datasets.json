@@ -1,48 +1,48 @@
 [
     {
-        "name": "Text",
+        "name": "text",
         "datasets": [
             "LegalQuAD",
             "MBPP",
             "PyTorch1024",
             "TAT-QA"
         ],
-        "leaderboard": "text"
+        "leaderboard": "Text"
     },
     {
-        "name": "Text",
+        "name": "law",
         "datasets": [
             "LegalQuAD"
         ],
-        "leaderboard": "law"
+        "leaderboard": "Text"
     },
     {
-        "name": "Text",
+        "name": "multilingual",
         "datasets": [
             "LegalQuAD"
         ],
-        "leaderboard": "multilingual"
+        "leaderboard": "Text"
     },
     {
-        "name": "Text",
+        "name": "german",
         "datasets": [
             "LegalQuAD"
         ],
-        "leaderboard": "german"
+        "leaderboard": "Text"
     },
     {
-        "name": "Text",
+        "name": "code",
         "datasets": [
             "MBPP"
         ],
-        "leaderboard": "code"
+        "leaderboard": "Text"
     },
     {
-        "name": "Text",
+        "name": "tech",
         "datasets": [
             "PyTorch1024",
             "TAT-QA"
         ],
-        "leaderboard": "tech"
+        "leaderboard": "Text"
     }
 ]
