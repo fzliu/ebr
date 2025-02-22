@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from abc import ABC, abstractmethod
+from abc import ABC
 from functools import cache
 from pathlib import Path
 from typing import Any, TYPE_CHECKING
@@ -11,14 +11,15 @@ if TYPE_CHECKING:
     from ebr.core.meta import DatasetMeta
 
 
-def add_instruct(dataset: Dataset, instruct: str):
-    
-    def _add_instruct(example):
-        example["text"] = instruct + example["text"]
-        return example
+def add_instruct(
+    dataset: Dataset,
+    instruct: str,
+    input_type: str
+):
 
     for item in dataset.data:
-        item = _add_instruct(item)
+        item["text"] = instruct + item["text"]
+        item["input_type"] = input_type
 
     return dataset
 
@@ -42,16 +43,17 @@ class RetrievalDataset(ABC):
         self._corpus_instruct = corpus_instruct
         self._task_path = (Path(data_path) / dataset_meta.dataset_name).resolve()
 
-    def __getattr__(self, name: str) -> Any:
-        return getattr(self._dataset_meta, name)
+    #def __getattr__(self, name: str) -> Any:
+    #    try:
+    #        return super().__getattr__(name)
+    #    except AttributeError:
+    #        return getattr(self._dataset_meta, name)
 
     @property
     @cache
     def corpus(self) -> Dataset:
-        # Dataset of dicts with fields {"id", "text"}
         corpus = self._corpus()
-        if self._corpus_instruct:
-            corpus = add_instruct(corpus, self._corpus_instruct)
+        corpus = add_instruct(corpus, self._corpus_instruct, "document")
         return corpus
 
     def _corpus(self) -> Dataset:
@@ -60,10 +62,8 @@ class RetrievalDataset(ABC):
     @property
     @cache
     def queries(self) -> Dataset:
-        # Dataset of dicts with fields {"id", "text"}
         queries = self._queries()
-        if self._query_instruct:
-            queries = add_instruct(queries, self._query_instruct)
+        queries = add_instruct(queries, self._query_instruct, "query")
         return queries
 
     def _queries(self) -> Dataset:

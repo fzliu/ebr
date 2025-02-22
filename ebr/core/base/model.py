@@ -24,11 +24,11 @@ class EmbeddingModel(nn.Module, ABC):
         self._model_meta = model_meta
 
     @abstractmethod
-    def embed(self, data: Any):
+    def embed(self, data: Any, input_type: str) -> list[list[float]]:
         pass
 
     def forward(self, batch: dict[str, Any]) -> list[list[float]]:
-        return self.embed(batch["text"])
+        return self.embed(batch["text"], batch["input_type"][0])
 
     def __getattr__(self, name: str) -> Any:
         try:
@@ -62,7 +62,7 @@ class APIEmbeddingModel(EmbeddingModel):
         while not self._num_retries or num_tries < self._num_retries:
             try:
                 num_tries += 1
-                result = self.embed(batch["text"])
+                result = super().forward(batch)
             except Exception as e:
                 logging.error(e)
                 if isinstance(e, type(self).rate_limit_error_type()):

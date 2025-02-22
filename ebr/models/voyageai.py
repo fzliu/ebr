@@ -35,8 +35,13 @@ class VoyageAIEmbeddingModel(APIEmbeddingModel):
             self._client = voyageai.Client(api_key=self._api_key)
         return self._client
 
-    def embed(self, data: Any) -> list[list[float]]:
-        result = self.client.embed(data, model=self.model_name)
+    def embed(self, data: Any, input_type: str) -> list[list[float]]:
+        result = self.client.embed(
+            data,
+            model=self.model_name,
+            output_dimension=self.embd_dim,
+            input_type=None
+        )
         return result.embeddings
 
     @staticmethod
@@ -49,11 +54,11 @@ class VoyageAIEmbeddingModel(APIEmbeddingModel):
 
 
 
-voyage_3_lite = ModelMeta(
+voyage_3 = ModelMeta(
     loader=VoyageAIEmbeddingModel,
-    model_name="voyage-3-lite",
+    model_name="voyage-3",
     embd_dtype="float32",
-    embd_dim=512,
+    embd_dim=1024,
     max_tokens=32_000,
     similarity="cosine",
     query_instruct="Represent the query for retrieving supporting documents: ",

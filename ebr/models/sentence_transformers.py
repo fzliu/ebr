@@ -16,7 +16,7 @@ class SentenceTransformersEmbeddingModel(EmbeddingModel):
         super().__init__(model_meta, **kwargs)
         self._model = SentenceTransformer(self.model_name, trust_remote_code=True)
 
-    def embed(self, data: str) -> list[list[float]]:
+    def embed(self, data: str, input_type: str) -> list[list[float]]:
         return self._model.encode(data)
 
 
@@ -90,7 +90,6 @@ jina_embeddings_v2_base_en = ModelMeta(
     similarity="cosine",
     reference="https://huggingface.co/jinaai/jina-embeddings-v2-base-en"
 )
-"""
 
 
 jina_embeddings_v2_small_en = ModelMeta(
@@ -103,3 +102,5 @@ jina_embeddings_v2_small_en = ModelMeta(
     similarity="cosine",
     reference="https://huggingface.co/jinaai/jina-embeddings-v2-small-en"
 )
+"""
+

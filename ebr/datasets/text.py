@@ -72,6 +72,7 @@ class TextRetrievalDataset(RetrievalDataset):
     @cache
     def relevance(self) -> dict:
         relevant_docs = {}
+        print(self.relevance_file)
         try:
             with open(self.relevance_file) as f:
                 for line in f:
@@ -86,14 +87,93 @@ class TextRetrievalDataset(RetrievalDataset):
         return relevant_docs
 
 
+# Legal datasets
+
+AILACasedocs = DatasetMeta(
+    loader=TextRetrievalDataset,
+    dataset_name="AILACasedocs",
+    tier=3,
+    groups={"text": 1, "legal": 1, "english": 1},
+    reference=None
+)
+
+AILAStatutes = DatasetMeta(
+    loader=TextRetrievalDataset,
+    dataset_name="AILAStatutes",
+    tier=3,
+    groups={"text": 1, "legal": 1, "english": 1},
+    reference=None
+)
+
+LegalSummarization = DatasetMeta(
+    loader=TextRetrievalDataset,
+    dataset_name="LegalSummarization",
+    tier=3,
+    groups={"text": 1, "legal": 1, "english": 1},
+    reference=None
+)
+
 LegalQuAD = DatasetMeta(
     loader=TextRetrievalDataset,
     dataset_name="LegalQuAD",
     tier=3,
-    groups={"text": 1, "law": 1, "multilingual": 1, "german": 1},
+    groups={"text": 1, "legal": 1, "german": 1},
     reference=None
 )
 
+
+# Finance datasets
+
+FinanceBench = DatasetMeta(
+    loader=TextRetrievalDataset,
+    dataset_name="FinanceBench",
+    tier=3,
+    groups={"text": 1, "finance": 1, "english": 1},
+    reference=None
+)
+
+HC3Finance = DatasetMeta(
+    loader=TextRetrievalDataset,
+    dataset_name="HC3Finance",
+    tier=3,
+    groups={"text": 1, "finance": 1, "english": 1},
+    reference=None
+)
+
+FinQA = DatasetMeta(
+    loader=TextRetrievalDataset,
+    dataset_name="FinQA",
+    tier=3,
+    groups={"text": 1, "finance": 1, "english": 1},
+    reference=None
+)
+
+
+# Code datasets
+
+APPS = DatasetMeta(
+    loader=TextRetrievalDataset,
+    dataset_name="APPS",
+    tier=3,
+    groups={"text": 1, "code": 1, "english": 1},
+    reference=None
+)
+
+DS1000 = DatasetMeta(
+    loader=TextRetrievalDataset,
+    dataset_name="DS1000",
+    tier=3,
+    groups={"text": 1, "code": 1, "english": 1},
+    reference=None
+)
+
+HumanEval = DatasetMeta(
+    loader=TextRetrievalDataset,
+    dataset_name="HumanEval",
+    tier=3,
+    groups={"text": 1, "code": 1},
+    reference=None
+)
 
 MBPP = DatasetMeta(
     loader=TextRetrievalDataset,
@@ -103,21 +183,33 @@ MBPP = DatasetMeta(
     reference=None
 )
 
-
-PyTorch1024 = DatasetMeta(
+WikiSQL = DatasetMeta(
     loader=TextRetrievalDataset,
-    dataset_name="PyTorch1024",
+    dataset_name="WikiSQL",
     tier=3,
-    groups={"text": 1, "tech": 1},
+    groups={"text": 1, "code": 1, "english": 1},
     reference=None
 )
 
 
-TAT_QA = DatasetMeta(
+# Healthcare datasets
+
+ChatDoctor_HealthCareMagic = DatasetMeta(
     loader=TextRetrievalDataset,
-    dataset_name="TAT-QA",
+    dataset_name="ChatDoctor_HealthCareMagic",
     tier=3,
-    groups={"text": 1, "tech": 1},
+    groups={"text": 1, "healthcare": 1, "english": 1},
+    reference=None
+)
+
+
+# Other/multilingual datasets
+
+FrenchBoolQ = DatasetMeta(
+    loader=TextRetrievalDataset,
+    dataset_name="FrenchBoolQ",
+    tier=3,
+    groups={"text": 1, "french": 1},
     reference=None
 )
 

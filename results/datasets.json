@@ -2,24 +2,80 @@
     {
         "name": "text",
         "datasets": [
+            "AILACasedocs",
+            "AILAStatutes",
+            "APPS",
+            "ChatDoctor_HealthCareMagic",
+            "DS1000",
+            "FinQA",
+            "FinanceBench",
+            "FrenchBoolQ",
+            "HC3Finance",
+            "HumanEval",
             "LegalQuAD",
+            "LegalSummarization",
             "MBPP",
-            "PyTorch1024",
-            "TAT-QA"
+            "WikiSQL"
         ],
         "leaderboard": "Text"
     },
     {
-        "name": "law",
+        "name": "legal",
         "datasets": [
-            "LegalQuAD"
+            "AILACasedocs",
+            "AILAStatutes",
+            "LegalQuAD",
+            "LegalSummarization"
         ],
         "leaderboard": "Text"
     },
     {
-        "name": "multilingual",
+        "name": "english",
         "datasets": [
-            "LegalQuAD"
+            "AILACasedocs",
+            "AILAStatutes",
+            "APPS",
+            "ChatDoctor_HealthCareMagic",
+            "DS1000",
+            "FinQA",
+            "FinanceBench",
+            "HC3Finance",
+            "LegalSummarization",
+            "WikiSQL"
+        ],
+        "leaderboard": "Text"
+    },
+    {
+        "name": "code",
+        "datasets": [
+            "APPS",
+            "DS1000",
+            "HumanEval",
+            "MBPP",
+            "WikiSQL"
+        ],
+        "leaderboard": "Text"
+    },
+    {
+        "name": "healthcare",
+        "datasets": [
+            "ChatDoctor_HealthCareMagic"
+        ],
+        "leaderboard": "Text"
+    },
+    {
+        "name": "finance",
+        "datasets": [
+            "FinQA",
+            "FinanceBench",
+            "HC3Finance"
+        ],
+        "leaderboard": "Text"
+    },
+    {
+        "name": "french",
+        "datasets": [
+            "FrenchBoolQ"
         ],
         "leaderboard": "Text"
     },
@@ -27,21 +83,6 @@
         "name": "german",
         "datasets": [
             "LegalQuAD"
-        ],
-        "leaderboard": "Text"
-    },
-    {
-        "name": "code",
-        "datasets": [
-            "MBPP"
-        ],
-        "leaderboard": "Text"
-    },
-    {
-        "name": "tech",
-        "datasets": [
-            "PyTorch1024",
-            "TAT-QA"
         ],
         "leaderboard": "Text"
     }

@@ -29,7 +29,7 @@ def get_args() -> argparse.Namespace:
     parser.add_argument(
         "--bf16", action="store_true", help="`Use bf16 precision.")
     parser.add_argument(
-        "--batch_size", type=int, default=1, help="Batch size for encoding.")
+        "--batch_size", type=int, default=32, help="Batch size for encoding.")
     parser.add_argument(
         "--embd_batch_size", type=int, default=1024, help="Batch size for computing similarity of embeddings.")
     parser.add_argument(
@@ -48,7 +48,7 @@ def get_args() -> argparse.Namespace:
 
     # Data
     parser.add_argument(
-        "--data_path", type=str, default="data/", required=True, help="Path of the dataset, must be specified for custom tasks.")
+        "--data_path", type=str, default="data/", help="Path of the dataset, must be specified for custom tasks.")
     parser.add_argument(
         "--task_name", type=str, default=None, help="Name of the task. Can be multiple tasks splitted by `,`.")
     parser.add_argument(
@@ -58,7 +58,7 @@ def get_args() -> argparse.Namespace:
     
     # Output
     parser.add_argument(
-        "--save_path", type=str, default="output/", required=True, help="Path to save the output.")
+        "--save_path", type=str, default="output/", help="Path to save the output.")
     parser.add_argument(
         "--save_embds", action="store_true", help="Whether to save the embeddings.")
     parser.add_argument(
@@ -116,7 +116,8 @@ def _compile_results(
 
         results.append({
             "dataset_name": dataset_output_dir.name,
-            "results": dataset_results
+            "results": dataset_results,
+            "is_closed": DATASET_REGISTRY[dataset_output_dir.name].tier != 3
         })
 
     with open(Path(results_dir) / "results.json", "w") as f:

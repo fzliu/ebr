@@ -43,7 +43,7 @@ class OpenAIEmbeddingModel(APIEmbeddingModel):
             self._tokenizer = tiktoken.get_encoding("cl100k_base")
         return self._tokenizer
 
-    def embed(self, data: str) -> list[list[float]]:
+    def embed(self, data: str, input_type: str) -> list[list[float]]:
         tokens = [self.tokenizer.encode(text, disallowed_special=()) for text in data]
         if self.max_tokens:
             for n, tok in enumerate(tokens):
@@ -52,6 +52,7 @@ class OpenAIEmbeddingModel(APIEmbeddingModel):
         result = self.client.embeddings.create(
             input=tokens,
             model=self.model_name,
+            dimensions=self.embd_dim
         )
         embeddings = [d.embedding for d in result.data]
         return embeddings
@@ -68,11 +69,11 @@ class OpenAIEmbeddingModel(APIEmbeddingModel):
 
 text_embedding_3_small = ModelMeta(
     loader=OpenAIEmbeddingModel,
-    model_name="text-embedding-3-small",
+    model_name="text-embedding-3-large",
     embd_dtype="float32",
-    embd_dim=1536,
+    embd_dim=3072,
     max_tokens=8191,
     similarity="cosine",
-    reference="https://docs.voyageai.com/docs/embeddings"
+    reference="https://platform.openai.com/docs/guides/embeddings"
 )
 

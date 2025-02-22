@@ -11,31 +11,20 @@
         "reference": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
     },
     {
-        "model_name": "jinaai/jina-embeddings-v2-small-en",
+        "model_name": "text-embedding-3-large",
         "embd_dtype": "float32",
-        "embd_dim": 512,
-        "num_params": 32700000,
-        "max_tokens": 8192,
-        "similarity": "cosine",
-        "query_instruct": null,
-        "corpus_instruct": null,
-        "reference": "https://huggingface.co/jinaai/jina-embeddings-v2-small-en"
-    },
-    {
-        "model_name": "text-embedding-3-small",
-        "embd_dtype": "float32",
-        "embd_dim": 1536,
+        "embd_dim": 3072,
         "num_params": null,
         "max_tokens": 8191,
         "similarity": "cosine",
         "query_instruct": null,
         "corpus_instruct": null,
-        "reference": "https://docs.voyageai.com/docs/embeddings"
+        "reference": "https://platform.openai.com/docs/guides/embeddings"
     },
     {
-        "model_name": "voyage-3-lite",
+        "model_name": "voyage-3",
         "embd_dtype": "float32",
-        "embd_dim": 512,
+        "embd_dim": 1024,
         "num_params": null,
         "max_tokens": 32000,
         "similarity": "cosine",
