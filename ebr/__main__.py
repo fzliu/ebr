@@ -29,7 +29,7 @@ def get_args() -> argparse.Namespace:
     parser.add_argument(
         "--bf16", action="store_true", help="`Use bf16 precision.")
     parser.add_argument(
-        "--batch_size", type=int, default=32, help="Batch size for encoding.")
+        "--batch_size", type=int, default=16, help="Batch size for encoding.")
     parser.add_argument(
         "--embd_batch_size", type=int, default=1024, help="Batch size for computing similarity of embeddings.")
     parser.add_argument(

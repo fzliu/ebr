@@ -66,12 +66,12 @@ class APIEmbeddingModel(EmbeddingModel):
             except Exception as e:
                 logging.error(e)
                 if isinstance(e, type(self).rate_limit_error_type()):
-                    time.sleep(30)
-                elif isinstance(e, type(self).service_error_type()):
                     time.sleep(60)
+                elif isinstance(e, type(self).service_error_type()):
+                    time.sleep(300)
                 else:
                     raise e
-            return result
+        return result
 
     @property
     def api_key(self) -> str:

@@ -18,7 +18,8 @@ def add_instruct(
 ):
 
     for item in dataset.data:
-        item["text"] = instruct + item["text"]
+        if instruct:
+            item["text"] = instruct + item["text"]
         item["input_type"] = input_type
 
     return dataset

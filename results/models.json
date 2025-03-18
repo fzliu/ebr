@@ -11,6 +11,17 @@
         "reference": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
     },
     {
+        "model_name": "embed-multilingual-v3.0",
+        "embd_dtype": "float32",
+        "embd_dim": 1024,
+        "num_params": null,
+        "max_tokens": 512,
+        "similarity": "cosine",
+        "query_instruct": null,
+        "corpus_instruct": null,
+        "reference": "https://docs.cohere.com/v2/docs/cohere-embed"
+    },
+    {
         "model_name": "text-embedding-3-large",
         "embd_dtype": "float32",
         "embd_dim": 3072,
