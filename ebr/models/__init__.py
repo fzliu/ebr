@@ -4,6 +4,8 @@ from ebr.models.cohere import *
 from ebr.models.openai import *
 from ebr.models.sentence_transformers import *
 from ebr.models.voyageai import *
+from ebr.models.bgem3 import *
+from ebr.models.gritlm import *
 
 
 MODEL_REGISTRY: dict[str, ModelMeta] = {}
