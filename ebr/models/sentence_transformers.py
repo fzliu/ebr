@@ -31,6 +31,17 @@ all_MiniLM_L6_v2 = ModelMeta(
     reference="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
 )
 
+e5_mistral_7b_instruct = ModelMeta(
+    loader=SentenceTransformersEmbeddingModel,
+    model_name="intfloat/e5-mistral-7b-instruct",
+    embd_dtype="float32",
+    embd_dim=4096,
+    num_params=22_700_000,
+    max_tokens=256,
+    similarity="cosine",
+    reference="https://huggingface.co/intfloat/e5-mistral-7b-instruct"
+)
+
 """
 all_MiniLM_L12_v2 = ModelMeta(
     loader=SentenceTransformersEmbeddingModel,
