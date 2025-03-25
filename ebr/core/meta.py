@@ -27,7 +27,7 @@ def model_id(
     embd_dtype: str,
     embd_dim: int,
 ) -> str:
-    return f"{model_name.replace("/", "__")}_{embd_dtype}_{embd_dim}d"
+    return f"{model_name.replace('/', '__')}_{embd_dtype}_{embd_dim}d"
 
 
 class DatasetMeta(BaseModel):
