@@ -72,8 +72,8 @@ class TextRetrievalDataset(RetrievalDataset):
     @cache
     def relevance(self) -> dict:
         relevant_docs = {}
-        print(self.relevance_file)
         try:
+            print(self.relevance_file)
             with open(self.relevance_file) as f:
                 for line in f:
                     data = json.loads(line)
