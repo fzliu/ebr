@@ -7,7 +7,6 @@ import logging
 
 from ebr.core.base import APIEmbeddingModel
 from ebr.core.meta import ModelMeta
-from ebr.utils.lazy_import import LazyImport
 
 from google import genai
 from google.genai.types import EmbedContentConfig
@@ -28,20 +27,21 @@ class GoogleEmbeddingModel(APIEmbeddingModel):
             num_retries=num_retries,
             **kwargs
         )
-        self._client = genai.Client()
+        self._client = None
 
     @property
     def client(self) -> genai.Client:
-        print("Initializing the client")
         if not self._client:
-            self._client = genai.Client()
+            print("Initializing the client")
+            self._client = genai.Client(api_key="AIzaSyCQNFwbJgxy8cuSexhbxpwiOs9q3EiI8Po")
         return self._client
 
     def embed(self, data: Any, input_type: str) -> list[list[float]]:
         response = self.client.models.embed_content(
-            model=self.model_name,
+            model=self._model_meta.model_name,
             contents=data,
             config=EmbedContentConfig(
+                task_type="RETRIEVAL_DOCUMENT",  # Optional
                 output_dimensionality=self.embd_dim,  # Optional
             ),
         )
@@ -53,18 +53,21 @@ class GoogleEmbeddingModel(APIEmbeddingModel):
             try:
                 num_tries += 1
                 result = self.embed(batch["text"], batch["input_type"][0])
+                return result
             except Exception as e:
                 logging.error(e)
                 if isinstance(e, APIError):
                     if e.code == 429:
+                        print("RLE")
                         time.sleep(60)
                     elif e.code >= 500:
+                        print("Other error")
                         time.sleep(300)
                     else:
                         raise e
                 else:
                     raise e
-        return result
+        raise Exception(f"Calling the API failed {num_tries} times")
 
 
 text_embedding_004 = ModelMeta(
