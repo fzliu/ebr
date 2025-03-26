@@ -33,7 +33,7 @@ class GoogleEmbeddingModel(APIEmbeddingModel):
     def client(self) -> genai.Client:
         if not self._client:
             print("Initializing the client")
-            self._client = genai.Client(api_key="AIzaSyCQNFwbJgxy8cuSexhbxpwiOs9q3EiI8Po")
+            self._client = genai.Client(api_key=self._api_key)
         return self._client
 
     def embed(self, data: Any, input_type: str) -> list[list[float]]:
