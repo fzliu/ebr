@@ -2,7 +2,7 @@
 name = "ebr"
 version = "2025.01.08"
 description = "Embedding benchmark for retrieval"
-requires-python = ">=3.9"
+requires-python = ">=3.10"  # Because of NoneType
 dependencies = [
     "numpy>=1.25",
     "lightning>=2.1.1",
