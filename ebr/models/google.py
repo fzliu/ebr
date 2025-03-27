@@ -41,8 +41,8 @@ class GoogleEmbeddingModel(APIEmbeddingModel):
             model=self._model_meta.model_name,
             contents=data,
             config=EmbedContentConfig(
-                task_type="RETRIEVAL_DOCUMENT",  # Optional
-                output_dimensionality=self.embd_dim,  # Optional
+                task_type="RETRIEVAL_QUERY" if input_type == "query" else "RETRIEVAL_DOCUMENT",
+                output_dimensionality=self.embd_dim,
             ),
         )
         return [embedding.values for embedding in response.embeddings]
@@ -74,20 +74,8 @@ text_embedding_004 = ModelMeta(
     loader=GoogleEmbeddingModel,
     model_name="text-embedding-004",
     embd_dtype="float32",
-    embd_dim=768,  # TODO
-    num_params=1_000,  # TODO
-    max_tokens=256,  # TODO
-    similarity="cosine",
-    reference="https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings"
-)
-
-text_embedding_005 = ModelMeta(
-    loader=GoogleEmbeddingModel,
-    model_name="text-embedding-005",
-    embd_dtype="float32",
-    embd_dim=768,  # TODO
-    num_params=1_000,  # TODO
-    max_tokens=256,  # TODO
+    embd_dim=768,
+    max_tokens=2048,
     similarity="cosine",
     reference="https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings"
 )
