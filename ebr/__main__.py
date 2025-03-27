@@ -116,6 +116,7 @@ def _compile_results(
 
         results.append({
             "dataset_name": dataset_output_dir.name,
+            "dataset_meta": DATASET_REGISTRY[dataset_output_dir.name].model_dump(),
             "results": dataset_results,
             "is_closed": DATASET_REGISTRY[dataset_output_dir.name].tier != 3
         })
