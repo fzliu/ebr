@@ -67,7 +67,7 @@ class OpenAIEmbeddingModel(APIEmbeddingModel):
 
 
 
-text_embedding_3_small = ModelMeta(
+text_embedding_3_large = ModelMeta(
     loader=OpenAIEmbeddingModel,
     model_name="text-embedding-3-large",
     embd_dtype="float32",
@@ -77,3 +77,35 @@ text_embedding_3_small = ModelMeta(
     reference="https://platform.openai.com/docs/guides/embeddings"
 )
 
+
+text_embedding_3_large_512d = ModelMeta(
+    loader=OpenAIEmbeddingModel,
+    model_name="text-embedding-3-large",
+    embd_dtype="float32",
+    embd_dim=512,
+    max_tokens=8191,
+    similarity="cosine",
+    reference="https://platform.openai.com/docs/guides/embeddings"
+)
+
+
+text_embedding_3_small = ModelMeta(
+    loader=OpenAIEmbeddingModel,
+    model_name="text-embedding-3-small",
+    embd_dtype="float32",
+    embd_dim=1536,
+    max_tokens=8191,
+    similarity="cosine",
+    reference="https://platform.openai.com/docs/guides/embeddings"
+)
+
+
+text_embedding_3_small_512d = ModelMeta(
+    loader=OpenAIEmbeddingModel,
+    model_name="text-embedding-3-small",
+    embd_dtype="float32",
+    embd_dim=512,
+    max_tokens=8191,
+    similarity="cosine",
+    reference="https://platform.openai.com/docs/guides/embeddings"
+)

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Any, Callable, Literal
+from typing import Any, Callable, Literal, Optional
 
 from pydantic import BaseModel, ConfigDict
 
@@ -27,7 +27,7 @@ def model_id(
     embd_dtype: str,
     embd_dim: int,
 ) -> str:
-    return f"{model_name.replace("/", "__")}_{embd_dtype}_{embd_dim}d"
+    return f"{model_name.replace('/', '__')}_{embd_dtype}_{embd_dim}d"
 
 
 class DatasetMeta(BaseModel):
@@ -88,6 +88,7 @@ class ModelMeta(BaseModel):
     query_instruct: str | None = None
     corpus_instruct: str | None = None
     reference: str | None = None
+    alias: str | None = None
 
     def model_dump(self, **kwargs) -> dict[str, Any]:
         exclude = kwargs.pop("exclude", set()) | {"loader"}

@@ -6,6 +6,7 @@ from ebr.models.sentence_transformers import *
 from ebr.models.voyageai import *
 from ebr.models.bgem3 import *
 from ebr.models.gritlm import *
+from ebr.models.google import *
 
 
 MODEL_REGISTRY: dict[str, ModelMeta] = {}
