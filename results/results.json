@@ -1,16 +1,13 @@
 [
     {
         "dataset_name": "LegalQuAD",
-        "dataset_meta": {
-            "dataset_name": "LegalQuAD",
-            "tier": 3,
-            "groups": {
-                "text": 1,
-                "legal": 1,
-                "german": 1
-            },
-            "reference": null
+        "tier": 3,
+        "groups": {
+            "text": 1,
+            "legal": 1,
+            "german": 1
         },
+        "reference": null,
         "results": [
             {
                 "ndcg_at_1": 0.31,
