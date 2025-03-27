@@ -1,6 +1,6 @@
 [
     {
-        "model_name": "all-MiniLM-L6-v2",
+        "model_name": "sentence-transformers/all-MiniLM-L6-v2",
         "embd_dtype": "float32",
         "embd_dim": 384,
         "num_params": 22700000,
@@ -8,8 +8,7 @@
         "similarity": "cosine",
         "query_instruct": null,
         "corpus_instruct": null,
-        "reference": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2",
-        "alias": null
+        "reference": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
     },
     {
         "model_name": "embed-multilingual-v3.0",
@@ -20,32 +19,7 @@
         "similarity": "cosine",
         "query_instruct": null,
         "corpus_instruct": null,
-        "reference": "https://docs.cohere.com/v2/docs/cohere-embed",
-        "alias": null
-    },
-    {
-        "model_name": "text-embedding-004",
-        "embd_dtype": "float32",
-        "embd_dim": 768,
-        "num_params": 1000,
-        "max_tokens": 256,
-        "similarity": "cosine",
-        "query_instruct": null,
-        "corpus_instruct": null,
-        "reference": "https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings",
-        "alias": null
-    },
-    {
-        "model_name": "text-embedding-005",
-        "embd_dtype": "float32",
-        "embd_dim": 768,
-        "num_params": 1000,
-        "max_tokens": 256,
-        "similarity": "cosine",
-        "query_instruct": null,
-        "corpus_instruct": null,
-        "reference": "https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings",
-        "alias": null
+        "reference": "https://docs.cohere.com/v2/docs/cohere-embed"
     },
     {
         "model_name": "text-embedding-3-large",
@@ -56,8 +30,7 @@
         "similarity": "cosine",
         "query_instruct": null,
         "corpus_instruct": null,
-        "reference": "https://platform.openai.com/docs/guides/embeddings",
-        "alias": null
+        "reference": "https://platform.openai.com/docs/guides/embeddings"
     },
     {
         "model_name": "voyage-3",
@@ -68,7 +41,6 @@
         "similarity": "cosine",
         "query_instruct": "Represent the query for retrieving supporting documents: ",
         "corpus_instruct": "Represent the document for retrieval: ",
-        "reference": "https://docs.voyageai.com/docs/embeddings",
-        "alias": null
+        "reference": "https://docs.voyageai.com/docs/embeddings"
     }
 ]
