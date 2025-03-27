@@ -63,6 +63,7 @@ class APIEmbeddingModel(EmbeddingModel):
             try:
                 num_tries += 1
                 result = super().forward(batch)
+                break
             except Exception as e:
                 logging.error(e)
                 if isinstance(e, type(self).rate_limit_error_type()):

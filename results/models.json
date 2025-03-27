@@ -11,20 +11,53 @@
         "reference": "https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
     },
     {
-        "model_name": "embed-multilingual-v3.0",
+        "model_name": "text-embedding-004",
         "embd_dtype": "float32",
-        "embd_dim": 1024,
+        "embd_dim": 768,
         "num_params": null,
-        "max_tokens": 512,
+        "max_tokens": 2048,
         "similarity": "cosine",
         "query_instruct": null,
         "corpus_instruct": null,
-        "reference": "https://docs.cohere.com/v2/docs/cohere-embed"
+        "reference": "https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings"
     },
     {
         "model_name": "text-embedding-3-large",
         "embd_dtype": "float32",
         "embd_dim": 3072,
+        "num_params": null,
+        "max_tokens": 8191,
+        "similarity": "cosine",
+        "query_instruct": null,
+        "corpus_instruct": null,
+        "reference": "https://platform.openai.com/docs/guides/embeddings"
+    },
+    {
+        "model_name": "text-embedding-3-large",
+        "embd_dtype": "float32",
+        "embd_dim": 512,
+        "num_params": null,
+        "max_tokens": 8191,
+        "similarity": "cosine",
+        "query_instruct": null,
+        "corpus_instruct": null,
+        "reference": "https://platform.openai.com/docs/guides/embeddings"
+    },
+    {
+        "model_name": "text-embedding-3-small",
+        "embd_dtype": "float32",
+        "embd_dim": 1536,
+        "num_params": null,
+        "max_tokens": 8191,
+        "similarity": "cosine",
+        "query_instruct": null,
+        "corpus_instruct": null,
+        "reference": "https://platform.openai.com/docs/guides/embeddings"
+    },
+    {
+        "model_name": "text-embedding-3-small",
+        "embd_dtype": "float32",
+        "embd_dim": 512,
         "num_params": null,
         "max_tokens": 8191,
         "similarity": "cosine",
