@@ -1,5 +1,4 @@
 import argparse
-import json
 from pathlib import Path
 import os
 import json
@@ -8,6 +7,7 @@ from beir.retrieval.evaluation import EvaluateRetrieval
 import pytorch_lightning as pl
 from termcolor import colored
 
+from ebr.core import Encoder
 from ebr.core.data import RetrieveDataModule
 from ebr.core.meta import DatasetMeta
 
@@ -37,7 +37,7 @@ def run_retrieve_evaluation(relevance, prediction):
 def run_retrieve_task(
     dataset_meta: DatasetMeta,
     trainer: pl.Trainer,
-    encoder: pl.LightningModule,
+    encoder: Encoder,
     retriever: pl.LightningModule,
     args: argparse.Namespace
 ):

@@ -2,7 +2,6 @@ from ebr.core.base import EmbeddingModel
 from ebr.utils.lazy_import import LazyImport
 from ebr.core.meta import ModelMeta
 
-
 SentenceTransformer = LazyImport("sentence_transformers", attribute="SentenceTransformer")
 
 
@@ -14,15 +13,23 @@ class SentenceTransformersEmbeddingModel(EmbeddingModel):
         **kwargs
     ):
         super().__init__(model_meta, **kwargs)
-        self._model = SentenceTransformer(self.model_name, trust_remote_code=True)
+        self._model = SentenceTransformer(f"{self.model_name_prefix}/{self.model_name}", trust_remote_code=True)
 
     def embed(self, data: str, input_type: str) -> list[list[float]]:
         return self._model.encode(data)
 
+    @property
+    def model_name_prefix(self) -> str:
+        return "sentence-transformers"
+
+    @property
+    def _id(self) -> str:
+        return f"{self.model_name_prefix}__{self._model_meta._id}"
+
 
 all_MiniLM_L6_v2 = ModelMeta(
     loader=SentenceTransformersEmbeddingModel,
-    model_name="sentence-transformers/all-MiniLM-L6-v2",
+    model_name="all-MiniLM-L6-v2",
     embd_dtype="float32",
     embd_dim=384,
     num_params=22_700_000,
