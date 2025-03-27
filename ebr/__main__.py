@@ -86,14 +86,19 @@ def _dump_dataset_info(
     results_dir: str = "results",
     dataset_registry: dict[str, DatasetMeta] = DATASET_REGISTRY,
 ):
+    leaderboard_dict = {}
     group_data = defaultdict(list)
     for dataset_meta in dataset_registry.values():
         for group_name in dataset_meta.groups.keys():
             leaderboard = dataset_meta.loader.LEADERBOARD
-            group_data[(leaderboard, group_name)].append(dataset_meta.dataset_name)
+            group_data[group_name].append(dataset_meta.dataset_name)
+            leaderboard_dict[group_name] = leaderboard
 
+    group_order = ["text", "legal", "finance", "code", "healthcare", "english", "german", "french"]
     groups = []
-    for (leaderboard, group_name), datasets in group_data.items():
+    for group_name in group_order:
+        datasets = group_data[group_name]
+        leaderboard = leaderboard_dict[group_name]
         groups.append({"name": group_name, "datasets": datasets, "leaderboard": leaderboard})
     with open(Path(results_dir) / "datasets.json", "w") as f:
         f.write(json.dumps(groups, indent=4))

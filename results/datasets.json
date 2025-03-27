@@ -30,18 +30,11 @@
         "leaderboard": "Text"
     },
     {
-        "name": "english",
+        "name": "finance",
         "datasets": [
-            "AILACasedocs",
-            "AILAStatutes",
-            "APPS",
-            "ChatDoctor_HealthCareMagic",
-            "DS1000",
             "FinQA",
             "FinanceBench",
-            "HC3Finance",
-            "LegalSummarization",
-            "WikiSQL"
+            "HC3Finance"
         ],
         "leaderboard": "Text"
     },
@@ -64,18 +57,18 @@
         "leaderboard": "Text"
     },
     {
-        "name": "finance",
+        "name": "english",
         "datasets": [
+            "AILACasedocs",
+            "AILAStatutes",
+            "APPS",
+            "ChatDoctor_HealthCareMagic",
+            "DS1000",
             "FinQA",
             "FinanceBench",
-            "HC3Finance"
-        ],
-        "leaderboard": "Text"
-    },
-    {
-        "name": "french",
-        "datasets": [
-            "FrenchBoolQ"
+            "HC3Finance",
+            "LegalSummarization",
+            "WikiSQL"
         ],
         "leaderboard": "Text"
     },
@@ -83,6 +76,13 @@
         "name": "german",
         "datasets": [
             "LegalQuAD"
+        ],
+        "leaderboard": "Text"
+    },
+    {
+        "name": "french",
+        "datasets": [
+            "FrenchBoolQ"
         ],
         "leaderboard": "Text"
     }
