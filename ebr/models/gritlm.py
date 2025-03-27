@@ -29,8 +29,7 @@ gritlm_7b = ModelMeta(
     model_name="GritLM/GritLM-7B",
     embd_dtype="float32",
     embd_dim=384,
-    num_params=22_700_000,
-    max_tokens=256,
+    num_params=7_240_000,
     similarity="cosine",
     reference="https://huggingface.co/GritLM/GritLM-7B"
 )
@@ -40,8 +39,7 @@ gritlm_8x7b = ModelMeta(
     model_name="GritLM/GritLM-8x7B",
     embd_dtype="float32",
     embd_dim=384,
-    num_params=22_700_000,
-    max_tokens=256,
+    num_params=46_700_000,
     similarity="cosine",
-    reference="https://huggingface.co/GritLM/GritLM-7B"
+    reference="https://huggingface.co/GritLM/GritLM-8x7B"
 )
