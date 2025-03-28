@@ -95,7 +95,7 @@ def _dump_dataset_info(
     groups = []
     for (leaderboard, group_name), datasets in group_data.items():
         groups.append({"name": group_name, "datasets": datasets, "leaderboard": leaderboard})
-    with open(Path(results_dir) / "datasets.json", "w") as f:
+    with open(Path(results_dir) / "groups.json", "w") as f:
         f.write(json.dumps(groups, indent=4))
 
 
