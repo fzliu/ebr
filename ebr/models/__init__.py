@@ -3,6 +3,7 @@ from ebr.core.meta import ModelMeta, model_id
 from ebr.models.cohere import *
 from ebr.models.openai import *
 from ebr.models.sentence_transformers import *
+from ebr.models.sentence_transformer_e5 import *
 from ebr.models.voyageai import *
 from ebr.models.bgem3 import *
 from ebr.models.gritlm import *
