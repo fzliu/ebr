@@ -184,8 +184,8 @@ class GoogleVertexAIEmbeddingModel(GoogleEmbeddingModel):
 #     loader=GoogleGenAIEmbeddingModel,
 #     model_name="text-multilingual-embedding-002",
 #     embd_dtype="float32",
-#     embd_dim=768,
-#     max_tokens=2048,
+#     embd_dim=768,  # TODO
+#     max_tokens=2048,  # TODO
 #     similarity="cosine",
 #     reference="https://ai.google.dev/gemini-api/docs/embeddings"
 # )
@@ -194,8 +194,8 @@ class GoogleVertexAIEmbeddingModel(GoogleEmbeddingModel):
 #     loader=GoogleVertexAIEmbeddingModel,
 #     model_name="text-multilingual-embedding-002",
 #     embd_dtype="float32",
-#     embd_dim=768,
-#     max_tokens=2048,
+#     embd_dim=768,  # TODO
+#     max_tokens=2048,  # TODO
 #     similarity="cosine",
 #     reference="https://cloud.google.com/vertex-ai/docs/generative-ai/embeddings/get-text-embeddings"
 # )
