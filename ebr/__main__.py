@@ -17,6 +17,8 @@ from ebr.core import Encoder, Retriever
 logger = logging.getLogger(__name__)
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
+GROUP_ORDER = ["text", "legal", "finance", "code", "healthcare", "english", "german", "french"]
+
 
 def get_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -94,9 +96,8 @@ def _dump_dataset_info(
             group_data[group_name].append(dataset_meta.dataset_name)
             leaderboard_dict[group_name] = leaderboard
 
-    group_order = ["text", "legal", "finance", "code", "healthcare", "english", "german", "french"]
     groups = []
-    for group_name in group_order:
+    for group_name in GROUP_ORDER:
         datasets = group_data[group_name]
         leaderboard = leaderboard_dict[group_name]
         groups.append({"name": group_name, "datasets": datasets, "leaderboard": leaderboard})
