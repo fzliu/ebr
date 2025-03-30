@@ -170,12 +170,32 @@ class GoogleVertexAIEmbeddingModel(GoogleEmbeddingModel):
 #     reference="https://ai.google.dev/gemini-api/docs/embeddings"
 # )
 #
-vertex_text_embedding_005 = ModelMeta(
-    loader=GoogleVertexAIEmbeddingModel,
-    model_name="text-embedding-005",
-    embd_dtype="float32",
-    embd_dim=768,
-    max_tokens=2048,
-    similarity="cosine",
-    reference="https://cloud.google.com/vertex-ai/docs/generative-ai/embeddings/get-text-embeddings"
-)
+# vertex_text_embedding_005 = ModelMeta(
+#     loader=GoogleVertexAIEmbeddingModel,
+#     model_name="text-embedding-005",
+#     embd_dtype="float32",
+#     embd_dim=768,
+#     max_tokens=2048,
+#     similarity="cosine",
+#     reference="https://cloud.google.com/vertex-ai/docs/generative-ai/embeddings/get-text-embeddings"
+# )
+
+# genai_text_multilingual_embedding_002 = ModelMeta(
+#     loader=GoogleGenAIEmbeddingModel,
+#     model_name="text-multilingual-embedding-002",
+#     embd_dtype="float32",
+#     embd_dim=768,
+#     max_tokens=2048,
+#     similarity="cosine",
+#     reference="https://ai.google.dev/gemini-api/docs/embeddings"
+# )
+#
+# vertex_text_multilingual_embedding_002 = ModelMeta(
+#     loader=GoogleVertexAIEmbeddingModel,
+#     model_name="text-multilingual-embedding-002",
+#     embd_dtype="float32",
+#     embd_dim=768,
+#     max_tokens=2048,
+#     similarity="cosine",
+#     reference="https://cloud.google.com/vertex-ai/docs/generative-ai/embeddings/get-text-embeddings"
+# )
