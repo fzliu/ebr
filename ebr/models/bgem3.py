@@ -20,16 +20,16 @@ class BGEM3EmbeddingModel(EmbeddingModel):
         result = self._model.encode(sentences=data, batch_size=12)['dense_vecs']
         return [[float(str(x)) for x in result[i]] for i in range(len(result))]
 
-
-bge_m3 = ModelMeta(
-    loader=BGEM3EmbeddingModel,
-    model_name='BAAI/bge-m3',
-    embd_dtype="float32",
-    embd_dim=1024,
-    max_tokens=8192,
-    similarity="cosine",
-    reference="https://huggingface.co/BAAI/bge-m3"
-)
+# bge_m3 = ModelMeta(
+#     loader=BGEM3EmbeddingModel,
+#     model_name='BAAI/bge-m3',
+#     embd_dtype="float32",
+#     embd_dim=1024,
+#     max_tokens=8192,
+#     num_params=568_000_000,
+#     similarity="cosine",
+#     reference="https://huggingface.co/BAAI/bge-m3"
+# )
 #
 # bge_m3_unsupervised = ModelMeta(
 #     loader=BGEM3EmbeddingModel,
