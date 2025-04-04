@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import logging
+import os
 import time
 from abc import abstractmethod
 from typing import Any, TYPE_CHECKING
@@ -32,10 +33,6 @@ else:
 
     vertexai = LazyImport("vertexai")
 
-PROJECT = "gemini-430116"
-REGION = 'us-central1'
-KEY_PATH = "/Users/fodizoltan/Projects/toptal/voyageai/ebr-frank/gemini-430116-c67de4bb207f.json"
-
 
 class GoogleEmbeddingModel(APIEmbeddingModel):
     def __init__(
@@ -49,10 +46,10 @@ class GoogleEmbeddingModel(APIEmbeddingModel):
             num_retries=num_retries,
             **kwargs
         )
-        self.project = PROJECT
-        self.region = REGION
+        self.project = os.environ["GOOGLE_CLOUD_PROJECT"]
+        self.region = os.environ["GOOGLE_CLOUD_LOCATION"]
         self.credentials = Credentials.from_service_account_file(
-            KEY_PATH,
+            os.environ["GOOGLE_APPLICATION_CREDENTIALS"],
             scopes=['https://www.googleapis.com/auth/cloud-platform']
         )
         if self.credentials.expired:

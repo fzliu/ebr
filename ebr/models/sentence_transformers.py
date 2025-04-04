@@ -27,6 +27,12 @@ class SentenceTransformersEmbeddingModel(EmbeddingModel):
         return f"{self.model_name_prefix}__{self._model_meta._id}"
 
 
+class E5EmbeddingModel(SentenceTransformersEmbeddingModel):
+    @property
+    def model_name_prefix(self) -> str:
+        return "intfloat"
+
+
 all_MiniLM_L6_v2 = ModelMeta(
     loader=SentenceTransformersEmbeddingModel,
     model_name="all-MiniLM-L6-v2",
@@ -37,6 +43,15 @@ all_MiniLM_L6_v2 = ModelMeta(
     similarity="cosine",
     reference="https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2"
 )
+
+# e5_mistral_7b_instruct = ModelMeta(
+#     loader=SentenceTransformersEmbeddingModel,
+#     model_name="e5-mistral-7b-instruct",
+#     embd_dtype="float32",
+#     embd_dim=4096,
+#     similarity="cosine",
+#     reference="https://huggingface.co/intfloat/e5-mistral-7b-instruct"
+# )
 
 """
 all_MiniLM_L12_v2 = ModelMeta(
