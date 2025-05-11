@@ -144,6 +144,18 @@
         "alias": null
     },
     {
+        "model_name": "text-embedding-004",
+        "embd_dtype": "float32",
+        "embd_dim": 768,
+        "num_params": null,
+        "max_tokens": 2048,
+        "similarity": "cosine",
+        "query_instruct": null,
+        "corpus_instruct": null,
+        "reference": "https://cloud.google.com/vertex-ai/generative-ai/docs/embeddings/get-text-embeddings",
+        "alias": null
+    },
+    {
         "model_name": "text-embedding-3-large",
         "embd_dtype": "float32",
         "embd_dim": 3072,

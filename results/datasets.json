@@ -9,6 +9,7 @@
             "ChatDoctor_HealthCareMagic",
             "ConvFinQA",
             "DS1000",
+            "DialogsumGerman",
             "FiQAPersonalFinance",
             "FinQA",
             "FinanceBench",
@@ -17,6 +18,7 @@
             "FrenchTriviaQAWikicontext",
             "GermanLegalSentences",
             "HC3Finance",
+            "HealthCareGerman",
             "HumanEval",
             "JapanLaw",
             "JapaneseCoNaLa",
@@ -76,7 +78,8 @@
         "name": "healthcare",
         "datasets": [
             "COVID_QA",
-            "ChatDoctor_HealthCareMagic"
+            "ChatDoctor_HealthCareMagic",
+            "HealthCareGerman"
         ],
         "leaderboard": "Text"
     },
@@ -94,19 +97,21 @@
         "leaderboard": "Text"
     },
     {
+        "name": "german",
+        "datasets": [
+            "DialogsumGerman",
+            "GermanLegalSentences",
+            "HealthCareGerman",
+            "LegalQuAD"
+        ],
+        "leaderboard": "Text"
+    },
+    {
         "name": "french",
         "datasets": [
             "FrenchBoolQ",
             "FrenchOpenFiscalTexts",
             "FrenchTriviaQAWikicontext"
-        ],
-        "leaderboard": "Text"
-    },
-    {
-        "name": "german",
-        "datasets": [
-            "GermanLegalSentences",
-            "LegalQuAD"
         ],
         "leaderboard": "Text"
     },
